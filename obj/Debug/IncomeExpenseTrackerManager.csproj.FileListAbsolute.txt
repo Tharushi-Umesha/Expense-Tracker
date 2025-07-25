@@ -1,0 +1,11 @@
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\bin\Debug\IncomeExpenseTrackerManager.exe.config
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\bin\Debug\IncomeExpenseTrackerManager.exe
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\bin\Debug\IncomeExpenseTrackerManager.pdb
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.csproj.AssemblyReference.cache
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.Form1.resources
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.Properties.Resources.resources
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.csproj.GenerateResource.cache
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.csproj.CoreCompileInputs.cache
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.exe
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.pdb
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.exe.config
