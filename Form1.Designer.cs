@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.login_registerBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.login_registerBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.login_username = new System.Windows.Forms.TextBox();
@@ -56,8 +56,46 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(343, 442);
+            this.panel1.Size = new System.Drawing.Size(343, 489);
             this.panel1.TabIndex = 0;
+            // 
+            // login_registerBtn
+            // 
+            this.login_registerBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.login_registerBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+            this.login_registerBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+            this.login_registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login_registerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_registerBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.login_registerBtn.Location = new System.Drawing.Point(63, 353);
+            this.login_registerBtn.Name = "login_registerBtn";
+            this.login_registerBtn.Size = new System.Drawing.Size(179, 44);
+            this.login_registerBtn.TabIndex = 3;
+            this.login_registerBtn.Text = "Sign Up";
+            this.login_registerBtn.UseVisualStyleBackColor = true;
+            this.login_registerBtn.Click += new System.EventHandler(this.login_registerBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(88, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Register Here";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(326, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Income Expense Tracker";
             // 
             // pictureBox1
             // 
@@ -79,43 +117,6 @@
             this.close.TabIndex = 1;
             this.close.Text = "X";
             this.close.Click += new System.EventHandler(this.close_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Income Expense Tracker";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(88, 325);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Register Here";
-            // 
-            // login_registerBtn
-            // 
-            this.login_registerBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.login_registerBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-            this.login_registerBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-            this.login_registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login_registerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_registerBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.login_registerBtn.Location = new System.Drawing.Point(63, 353);
-            this.login_registerBtn.Name = "login_registerBtn";
-            this.login_registerBtn.Size = new System.Drawing.Size(179, 44);
-            this.login_registerBtn.TabIndex = 3;
-            this.login_registerBtn.Text = "Sign Up";
-            this.login_registerBtn.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -148,6 +149,7 @@
             // 
             this.login_password.Location = new System.Drawing.Point(392, 252);
             this.login_password.Name = "login_password";
+            this.login_password.PasswordChar = '*';
             this.login_password.Size = new System.Drawing.Size(241, 22);
             this.login_password.TabIndex = 6;
             // 
@@ -171,6 +173,7 @@
             this.login_showPass.TabIndex = 7;
             this.login_showPass.Text = "Show Password";
             this.login_showPass.UseVisualStyleBackColor = true;
+            this.login_showPass.CheckedChanged += new System.EventHandler(this.login_showPass_CheckedChanged);
             // 
             // login_btn
             // 
@@ -187,12 +190,13 @@
             this.login_btn.TabIndex = 8;
             this.login_btn.Text = "Sign In";
             this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 442);
+            this.ClientSize = new System.Drawing.Size(689, 489);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.login_showPass);
             this.Controls.Add(this.login_password);
