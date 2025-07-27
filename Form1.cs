@@ -72,6 +72,12 @@ namespace IncomeExpenseTrackerManager
                         if (table.Rows.Count  > 0)
                         {
                             MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Go to main form after successful login
+                            MainForm mForm= new MainForm();
+                            mForm.Show();
+
+                            this.Hide();
                         }
                         else
                         {
