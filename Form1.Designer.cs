@@ -111,7 +111,7 @@
             this.close.AutoSize = true;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.close.Location = new System.Drawing.Point(638, 9);
+            this.close.Location = new System.Drawing.Point(669, 9);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(21, 20);
             this.close.TabIndex = 1;
