@@ -43,6 +43,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.categoryForm1 = new IncomeExpenseTrackerManager.CategoryForm();
+            this.incomeForm1 = new IncomeExpenseTrackerManager.IncomeForm();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -222,6 +223,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.incomeForm1);
             this.panel3.Controls.Add(this.categoryForm1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(234, 45);
@@ -235,6 +237,13 @@
             this.categoryForm1.Name = "categoryForm1";
             this.categoryForm1.Size = new System.Drawing.Size(1145, 748);
             this.categoryForm1.TabIndex = 0;
+            // 
+            // incomeForm1
+            // 
+            this.incomeForm1.Location = new System.Drawing.Point(0, 0);
+            this.incomeForm1.Name = "incomeForm1";
+            this.incomeForm1.Size = new System.Drawing.Size(1145, 748);
+            this.incomeForm1.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -275,5 +284,6 @@
         private System.Windows.Forms.Button addCategory_btn;
         private System.Windows.Forms.Panel panel3;
         private CategoryForm categoryForm1;
+        private IncomeForm incomeForm1;
     }
 }

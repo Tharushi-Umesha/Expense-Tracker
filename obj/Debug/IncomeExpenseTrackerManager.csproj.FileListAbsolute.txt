@@ -13,3 +13,4 @@ C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseT
 C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.MainForm.resources
 C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.CategoryForm.resources
 C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.DashboardForm.resources
+C:\Users\tharushi umesha\source\repos\IncomeExpenseTrackerManager\IncomeExpenseTrackerManager\obj\Debug\IncomeExpenseTrackerManager.IncomeForm.resources
