@@ -29,6 +29,9 @@ namespace IncomeExpenseTrackerManager
             List<CategoryData> listData = cdata.CategoryListData();
 
             dataGridView1.DataSource= listData;
+
+
+            dataGridView1.Columns["Date"].DefaultCellStyle.Format = "MM-dd-yyyy";
         }
 
         private void category_addBtn_Click(object sender, EventArgs e)
@@ -55,6 +58,7 @@ namespace IncomeExpenseTrackerManager
                         cmd.Parameters.AddWithValue("@date", today);
 
                         cmd .ExecuteNonQuery();
+                        clearFiels();
 
                         MessageBox.Show("Added Successfully", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -110,8 +114,57 @@ namespace IncomeExpenseTrackerManager
                             cmd.Parameters.AddWithValue("@date", today);
 
                             cmd.ExecuteNonQuery();
+                            clearFiels();
 
                             MessageBox.Show("Updated Successfully", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+
+                        connect.Close();
+                    }
+                }
+
+            }
+            displayCategoryList();
+        }
+
+
+        public void clearFiels()
+        {
+            category_category.Text = "";
+            category_type.SelectedIndex = -1;
+            category_status.SelectedIndex = -1;
+        }
+
+        private void category_clearBtn_Click(object sender, EventArgs e)
+        {
+            clearFiels();
+        }
+
+        private void category_deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (category_category.Text == "" || category_type.SelectedIndex == -1 || category_status.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select item first", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Delete ID: " + getID + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (SqlConnection connect = new SqlConnection(stringConnection))
+                    {
+                        connect.Open();
+
+                        string updateData = "DELETE FROM categories WHERE id = @id";
+
+                        using (SqlCommand cmd = new SqlCommand(updateData, connect))
+                        {
+                            cmd.Parameters.AddWithValue("@id", getID);
+
+                            cmd.ExecuteNonQuery();
+                            clearFiels();
+
+                            MessageBox.Show("Deleted Successfully", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace IncomeExpenseTrackerManager
 {
@@ -16,6 +17,8 @@ namespace IncomeExpenseTrackerManager
         public string category { get; set; }
         public string type { get; set; }
         public string status { get; set; }
+
+        public string Date { get; set; }
 
         public List<CategoryData> CategoryListData() 
         {
@@ -36,6 +39,7 @@ namespace IncomeExpenseTrackerManager
                         cdata.category = reader["category"].ToString();
                         cdata.type = reader["type"].ToString();
                         cdata.status = reader["status"].ToString();
+                        cdata.Date = Convert.ToDateTime(reader["date_insert"]).ToString("MM-dd-yyyy");
                         listData.Add(cdata);
                     }      
                 }

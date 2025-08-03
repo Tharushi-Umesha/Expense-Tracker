@@ -231,7 +231,7 @@
             // 
             // categoryForm1
             // 
-            this.categoryForm1.Location = new System.Drawing.Point(-3, 0);
+            this.categoryForm1.Location = new System.Drawing.Point(0, 0);
             this.categoryForm1.Name = "categoryForm1";
             this.categoryForm1.Size = new System.Drawing.Size(1145, 748);
             this.categoryForm1.TabIndex = 0;
