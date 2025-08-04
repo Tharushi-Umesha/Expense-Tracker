@@ -95,6 +95,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1058, 309);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -159,6 +160,7 @@
             this.income_clearBtn.TabIndex = 12;
             this.income_clearBtn.Text = "CLEAR";
             this.income_clearBtn.UseVisualStyleBackColor = false;
+            this.income_clearBtn.Click += new System.EventHandler(this.income_clearBtn_Click);
             // 
             // income_updateBtn
             // 
@@ -175,6 +177,7 @@
             this.income_updateBtn.TabIndex = 11;
             this.income_updateBtn.Text = "UPDATE";
             this.income_updateBtn.UseVisualStyleBackColor = false;
+            this.income_updateBtn.Click += new System.EventHandler(this.income_updateBtn_Click);
             // 
             // income_addBtn
             // 
