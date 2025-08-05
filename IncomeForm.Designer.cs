@@ -144,6 +144,7 @@
             this.income_deleteBtn.TabIndex = 13;
             this.income_deleteBtn.Text = "DELETE";
             this.income_deleteBtn.UseVisualStyleBackColor = false;
+            this.income_deleteBtn.Click += new System.EventHandler(this.income_deleteBtn_Click);
             // 
             // income_clearBtn
             // 
