@@ -41,5 +41,44 @@ namespace IncomeExpenseTrackerManager
                 this.Hide();
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dashboard_btn_Click(object sender, EventArgs e)
+        {
+            dashboardForm1.Visible = true;
+            categoryForm1.Visible = false;
+            incomeForm1.Visible = false;
+            expenseForm1.Visible = false;
+
+        }
+
+        private void addCategory_btn_Click(object sender, EventArgs e)
+        {
+            dashboardForm1.Visible = false;
+            categoryForm1.Visible = true;
+            incomeForm1.Visible = false;
+            expenseForm1.Visible = false;
+
+        }
+
+        private void income_btn_Click(object sender, EventArgs e)
+        {
+            dashboardForm1.Visible = false;
+            categoryForm1.Visible = false;
+            incomeForm1.Visible = true;
+            expenseForm1.Visible = false;
+        }
+
+        private void expenses_btn_Click(object sender, EventArgs e)
+        {
+            dashboardForm1.Visible = false;
+            categoryForm1.Visible = false;
+            incomeForm1.Visible = false;
+            expenseForm1.Visible = true;
+        }
     }
 }

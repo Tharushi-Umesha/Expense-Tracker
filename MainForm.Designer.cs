@@ -42,8 +42,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.categoryForm1 = new IncomeExpenseTrackerManager.CategoryForm();
+            this.dashboardForm1 = new IncomeExpenseTrackerManager.DashboardForm();
+            this.expenseForm1 = new IncomeExpenseTrackerManager.ExpenseForm();
             this.incomeForm1 = new IncomeExpenseTrackerManager.IncomeForm();
+            this.categoryForm1 = new IncomeExpenseTrackerManager.CategoryForm();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -109,6 +111,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 748);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // logout_btn
             // 
@@ -146,6 +149,7 @@
             this.expenses_btn.TabIndex = 5;
             this.expenses_btn.Text = "Expenses";
             this.expenses_btn.UseVisualStyleBackColor = false;
+            this.expenses_btn.Click += new System.EventHandler(this.expenses_btn_Click);
             // 
             // income_btn
             // 
@@ -164,6 +168,7 @@
             this.income_btn.TabIndex = 4;
             this.income_btn.Text = "Income";
             this.income_btn.UseVisualStyleBackColor = false;
+            this.income_btn.Click += new System.EventHandler(this.income_btn_Click);
             // 
             // addCategory_btn
             // 
@@ -182,6 +187,7 @@
             this.addCategory_btn.TabIndex = 3;
             this.addCategory_btn.Text = "Add Category";
             this.addCategory_btn.UseVisualStyleBackColor = false;
+            this.addCategory_btn.Click += new System.EventHandler(this.addCategory_btn_Click);
             // 
             // dashboard_btn
             // 
@@ -200,6 +206,7 @@
             this.dashboard_btn.TabIndex = 2;
             this.dashboard_btn.Text = "Dashboard";
             this.dashboard_btn.UseVisualStyleBackColor = false;
+            this.dashboard_btn.Click += new System.EventHandler(this.dashboard_btn_Click);
             // 
             // label2
             // 
@@ -223,6 +230,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.dashboardForm1);
+            this.panel3.Controls.Add(this.expenseForm1);
             this.panel3.Controls.Add(this.incomeForm1);
             this.panel3.Controls.Add(this.categoryForm1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -231,12 +240,19 @@
             this.panel3.Size = new System.Drawing.Size(1145, 748);
             this.panel3.TabIndex = 2;
             // 
-            // categoryForm1
+            // dashboardForm1
             // 
-            this.categoryForm1.Location = new System.Drawing.Point(0, 0);
-            this.categoryForm1.Name = "categoryForm1";
-            this.categoryForm1.Size = new System.Drawing.Size(1145, 748);
-            this.categoryForm1.TabIndex = 0;
+            this.dashboardForm1.Location = new System.Drawing.Point(0, 0);
+            this.dashboardForm1.Name = "dashboardForm1";
+            this.dashboardForm1.Size = new System.Drawing.Size(1145, 748);
+            this.dashboardForm1.TabIndex = 3;
+            // 
+            // expenseForm1
+            // 
+            this.expenseForm1.Location = new System.Drawing.Point(0, 0);
+            this.expenseForm1.Name = "expenseForm1";
+            this.expenseForm1.Size = new System.Drawing.Size(1145, 748);
+            this.expenseForm1.TabIndex = 2;
             // 
             // incomeForm1
             // 
@@ -244,6 +260,13 @@
             this.incomeForm1.Name = "incomeForm1";
             this.incomeForm1.Size = new System.Drawing.Size(1145, 748);
             this.incomeForm1.TabIndex = 1;
+            // 
+            // categoryForm1
+            // 
+            this.categoryForm1.Location = new System.Drawing.Point(0, 0);
+            this.categoryForm1.Name = "categoryForm1";
+            this.categoryForm1.Size = new System.Drawing.Size(1145, 748);
+            this.categoryForm1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -285,5 +308,7 @@
         private System.Windows.Forms.Panel panel3;
         private CategoryForm categoryForm1;
         private IncomeForm incomeForm1;
+        private ExpenseForm expenseForm1;
+        private DashboardForm dashboardForm1;
     }
 }

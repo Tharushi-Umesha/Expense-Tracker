@@ -2,34 +2,32 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace IncomeExpenseTrackerManager
 {
-    public partial class IncomeForm : UserControl
+    public partial class ExpenseForm : UserControl
     {
         string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\tharushi umesha\OneDrive - Edith Cowan University\Documents\expenseTracker.mdf"";Integrated Security=True;Connect Timeout=30";
 
-        public IncomeForm()
+
+        public ExpenseForm()
         {
             InitializeComponent();
-
             displayCategoryList();
-
-            displayIncomeData();
+            displayExpenseData();
         }
 
-        public void displayIncomeData()
+        public void displayExpenseData()
         {
-            IncomeData iData = new IncomeData();
-            List<IncomeData> listData = iData.IncomeListData();
+            ExpenseData eData = new ExpenseData();
+            List<ExpenseData> listData = eData.ExpenseListData();
 
             dataGridView1.DataSource = listData;
         }
@@ -45,16 +43,16 @@ namespace IncomeExpenseTrackerManager
                 using (SqlCommand cmd = new SqlCommand(selectData, connect))
                 {
 
-                    cmd.Parameters.AddWithValue("@type", "Income");
+                    cmd.Parameters.AddWithValue("@type", "Expenses");
                     cmd.Parameters.AddWithValue("@status", "Active");
 
-                    income_category.Items.Clear();
+                    expense_category.Items.Clear();
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        income_category.Items.Add(reader["category"].ToString());
+                        expense_category.Items.Add(reader["category"].ToString());
                     }
                 }
                 connect.Close();
@@ -62,9 +60,9 @@ namespace IncomeExpenseTrackerManager
 
         }
 
-        private void income_addBtn_Click(object sender, EventArgs e)
+        private void expense_addBtn_Click(object sender, EventArgs e)
         {
-            if (income_category.SelectedIndex == -1 || income_item.Text == "" || income_income.Text == "" || income_description.Text == "")
+            if (expense_category.SelectedIndex == -1 || expense_item.Text == "" || expense_expense.Text == "" || expense_description.Text == "")
             {
                 MessageBox.Show("Please fill all the fields.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -75,18 +73,18 @@ namespace IncomeExpenseTrackerManager
                 {
                     connect.Open();
 
-                    string insertData = "INSERT INTO income (category, item, income, description, date_income, date_inserted) VALUES (@category, @item, @income, @description, @date_income, @date_inserted)";
+                    string insertData = "INSERT INTO expenses (category, item, expense, description, date_expense, date_insert) VALUES (@category, @item, @expense, @description, @date_expense, @date_insert)";
 
                     using (SqlCommand cmd = new SqlCommand(insertData, connect))
                     {
-                        cmd.Parameters.AddWithValue("@category", income_category.SelectedItem);
-                        cmd.Parameters.AddWithValue("@item", income_item.Text);
-                        cmd.Parameters.AddWithValue("@income", Convert.ToDecimal(income_income.Text));
-                        cmd.Parameters.AddWithValue("@description", income_description.Text);
-                        cmd.Parameters.AddWithValue("@date_income", income_date.Value);
+                        cmd.Parameters.AddWithValue("@category", expense_category.SelectedItem);
+                        cmd.Parameters.AddWithValue("@item", expense_item.Text);
+                        cmd.Parameters.AddWithValue("@expense", Convert.ToDecimal(expense_expense.Text));
+                        cmd.Parameters.AddWithValue("@description", expense_description.Text);
+                        cmd.Parameters.AddWithValue("@date_expense", expense_date.Value);
 
                         DateTime today = DateTime.Now;
-                        cmd.Parameters.AddWithValue("@date_inserted", today);
+                        cmd.Parameters.AddWithValue("@date_insert", today);
 
                         cmd.ExecuteNonQuery();
                         clearFields();
@@ -96,51 +94,48 @@ namespace IncomeExpenseTrackerManager
                     }
                     connect.Close();
                 }
-
-               
             }
-            displayIncomeData();
-
+            displayExpenseData();
         }
 
         public void clearFields()
         {
-            income_category.SelectedIndex = -1;
-            income_item.Text = "";
-            income_income.Text = "";
-            income_description.Text = "";
+            expense_category.SelectedIndex = -1;
+            expense_item.Text = "";
+            expense_expense.Text = "";
+            expense_description.Text = "";
         }
 
-        private void income_clearBtn_Click(object sender, EventArgs e)
+        private void expense_clearBtn_Click(object sender, EventArgs e)
         {
             clearFields();
         }
 
-        private void income_updateBtn_Click(object sender, EventArgs e)
+        private void expense_updateBtn_Click(object sender, EventArgs e)
         {
-            if (income_category.SelectedIndex == -1 || income_item.Text == "" || income_income.Text == "" || income_description.Text == "")
+            if (expense_category.SelectedIndex == -1 || expense_item.Text == "" || expense_expense.Text == "" || expense_description.Text == "")
             {
                 MessageBox.Show("Please select a field first .", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
             {
-                if(MessageBox.Show("Are you sure you want to update ID: " + getID + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to update ID: " + getID + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     using (SqlConnection connect = new SqlConnection(stringConnection))
                     {
                         connect.Open();
 
-                        string updateData = "UPDATE income SET category = @category, item = @item, income = @income, description = @description, date_income = @date_income WHERE id = @id";
+                        string updateData = "UPDATE expenses SET category = @category, item = @item, expense = @expense, description = @description, date_expense = @date_expense WHERE id = @id";
 
                         using (SqlCommand cmd = new SqlCommand(updateData, connect))
                         {
                             cmd.Parameters.AddWithValue("@id", getID);
-                            cmd.Parameters.AddWithValue("@category", income_category.SelectedItem);
-                            cmd.Parameters.AddWithValue("@item", income_item.Text);
-                            cmd.Parameters.AddWithValue("@income", Convert.ToDecimal(income_income.Text));
-                            cmd.Parameters.AddWithValue("@description", income_description.Text);
-                            cmd.Parameters.AddWithValue("@date_income", income_date.Value);
+                            cmd.Parameters.AddWithValue("@category", expense_category.SelectedItem);
+                            cmd.Parameters.AddWithValue("@item", expense_item.Text);
+                            cmd.Parameters.AddWithValue("@expense", Convert.ToDecimal(expense_expense.Text));
+                            cmd.Parameters.AddWithValue("@description", expense_description.Text);
+                            cmd.Parameters.AddWithValue("@date_expense", expense_date.Value);
 
 
 
@@ -154,7 +149,7 @@ namespace IncomeExpenseTrackerManager
                     }
                 }
             }
-            displayIncomeData();
+            displayExpenseData();
         }
 
         private int getID = 0;
@@ -166,17 +161,17 @@ namespace IncomeExpenseTrackerManager
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
                 getID = Convert.ToInt32(row.Cells[0].Value);  // ID
-                income_category.SelectedItem = row.Cells[1].Value.ToString(); // Category
-                income_item.Text = row.Cells[2].Value.ToString(); // Item
-                income_income.Text = Convert.ToDecimal(row.Cells[3].Value).ToString(); // Income as string
-                income_description.Text = row.Cells[4].Value.ToString(); // Description
-                income_date.Value = Convert.ToDateTime(row.Cells[5].Value); // Date
+                expense_category.SelectedItem = row.Cells[1].Value.ToString(); // Category
+                expense_item.Text = row.Cells[2].Value.ToString(); // Item
+                expense_expense.Text = Convert.ToDecimal(row.Cells[3].Value).ToString(); // expense as string
+                expense_description.Text = row.Cells[4].Value.ToString(); // Description
+                expense_date.Value = Convert.ToDateTime(row.Cells[5].Value); // Date
             }
         }
 
-        private void income_deleteBtn_Click(object sender, EventArgs e)
+        private void expense_deleteBtn_Click(object sender, EventArgs e)
         {
-            if (income_category.SelectedIndex == -1 || income_item.Text == "" || income_income.Text == "" || income_description.Text == "")
+            if (expense_category.SelectedIndex == -1 || expense_item.Text == "" || expense_expense.Text == "" || expense_description.Text == "")
             {
                 MessageBox.Show("Please select a field first .", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -189,7 +184,7 @@ namespace IncomeExpenseTrackerManager
                     {
                         connect.Open();
 
-                        string deleteData = "DELETE FROM income WHERE id = @id";
+                        string deleteData = "DELETE FROM expenses WHERE id = @id";
 
                         using (SqlCommand cmd = new SqlCommand(deleteData, connect))
                         {
@@ -204,9 +199,7 @@ namespace IncomeExpenseTrackerManager
                     }
                 }
             }
-            displayIncomeData();
-
+            displayExpenseData();
         }
-
     }
 }
