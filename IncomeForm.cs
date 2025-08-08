@@ -26,6 +26,17 @@ namespace IncomeExpenseTrackerManager
             displayIncomeData();
         }
 
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayIncomeData();
+            displayCategoryList();
+        }
+
         public void displayIncomeData()
         {
             IncomeData iData = new IncomeData();
