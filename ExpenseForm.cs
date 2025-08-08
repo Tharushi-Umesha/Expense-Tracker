@@ -24,6 +24,18 @@ namespace IncomeExpenseTrackerManager
             displayExpenseData();
         }
 
+
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayExpenseData();
+            displayCategoryList();
+        }
+
         public void displayExpenseData()
         {
             ExpenseData eData = new ExpenseData();

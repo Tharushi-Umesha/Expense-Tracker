@@ -44,6 +44,8 @@ namespace IncomeExpenseTrackerManager
             login_password.PasswordChar = login_showPass.Checked ? '\0' : '*';
         }
 
+        public static string username;
+
         private void login_btn_Click(object sender, EventArgs e)
         {
             if (login_username.Text == "" || login_password.Text == "")
@@ -70,7 +72,9 @@ namespace IncomeExpenseTrackerManager
                         adapter.Fill(table);
 
                         if (table.Rows.Count  > 0)
-                        {
+                        { 
+
+                            username = login_username.Text;
                             MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             // Go to main form after successful login

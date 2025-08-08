@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.user_name = new System.Windows.Forms.Label();
             this.dashboardForm1 = new IncomeExpenseTrackerManager.DashboardForm();
             this.expenseForm1 = new IncomeExpenseTrackerManager.ExpenseForm();
             this.incomeForm1 = new IncomeExpenseTrackerManager.IncomeForm();
@@ -99,6 +100,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+            this.panel2.Controls.Add(this.user_name);
             this.panel2.Controls.Add(this.logout_btn);
             this.panel2.Controls.Add(this.expenses_btn);
             this.panel2.Controls.Add(this.income_btn);
@@ -111,7 +113,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 748);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // logout_btn
             // 
@@ -215,9 +216,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 26);
+            this.label2.Size = new System.Drawing.Size(105, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Welcome";
+            this.label2.Text = "Welcome,";
             // 
             // pictureBox2
             // 
@@ -239,6 +240,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1145, 748);
             this.panel3.TabIndex = 2;
+            // 
+            // user_name
+            // 
+            this.user_name.AutoSize = true;
+            this.user_name.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold);
+            this.user_name.ForeColor = System.Drawing.Color.White;
+            this.user_name.Location = new System.Drawing.Point(104, 145);
+            this.user_name.Name = "user_name";
+            this.user_name.Size = new System.Drawing.Size(24, 26);
+            this.user_name.TabIndex = 4;
+            this.user_name.Text = "0";
             // 
             // dashboardForm1
             // 
@@ -310,5 +322,6 @@
         private IncomeForm incomeForm1;
         private ExpenseForm expenseForm1;
         private DashboardForm dashboardForm1;
+        private System.Windows.Forms.Label user_name;
     }
 }

@@ -137,6 +137,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assests\image10.jpg" />
+    <Content Include="Assests\image11.png" />
+    <Content Include="Assests\image12.png" />
+    <Content Include="Assests\image13.png" />
+    <Content Include="Assests\image14.png" />
+    <Content Include="Assests\image15.png" />
+    <Content Include="Assests\image17.png" />
+    <Content Include="Assests\image18.png" />
+    <Content Include="Assests\image19.png" />
+    <Content Include="Assests\image20.png" />
+    <Content Include="Assests\image21.jpg" />
+    <Content Include="Assests\image22.png" />
+    <Content Include="Assests\image23.png" />
+    <Content Include="Assests\image24.png" />
     <Content Include="Assests\image3.png" />
     <Content Include="Assests\image4.png" />
     <Content Include="Assests\image5.png" />
@@ -144,6 +158,7 @@
     <Content Include="Assests\image7.png" />
     <Content Include="Assests\image8.png" />
     <Content Include="Assests\image9.png" />
+    <Content Include="Assests\today_income.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,19 @@ namespace IncomeExpenseTrackerManager
         public MainForm()
         {
             InitializeComponent();
+            displayUserName();
+        }
+
+        public void displayUserName() { 
+            string getUserName = Form1.username;
+            if (getUserName != null)
+            {
+                user_name.Text = getUserName;
+            }
+            else
+            {
+                user_name.Text = "Guest";
+            }
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -42,10 +55,7 @@ namespace IncomeExpenseTrackerManager
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void dashboard_btn_Click(object sender, EventArgs e)
         {
@@ -53,6 +63,13 @@ namespace IncomeExpenseTrackerManager
             categoryForm1.Visible = false;
             incomeForm1.Visible = false;
             expenseForm1.Visible = false;
+
+            DashboardForm dForm = dashboardForm1 as DashboardForm;
+
+            if (dForm != null)
+            {
+                dForm.refreshData();
+            }
 
         }
 
@@ -63,6 +80,12 @@ namespace IncomeExpenseTrackerManager
             incomeForm1.Visible = false;
             expenseForm1.Visible = false;
 
+            CategoryForm cForm = categoryForm1 as CategoryForm;
+            if (cForm != null)
+            {
+                cForm.refreshData();
+            }
+
         }
 
         private void income_btn_Click(object sender, EventArgs e)
@@ -71,6 +94,12 @@ namespace IncomeExpenseTrackerManager
             categoryForm1.Visible = false;
             incomeForm1.Visible = true;
             expenseForm1.Visible = false;
+
+            IncomeForm iForm = incomeForm1 as IncomeForm;
+            if (iForm != null)
+            {
+                iForm.refreshData();
+            }
         }
 
         private void expenses_btn_Click(object sender, EventArgs e)
@@ -79,6 +108,14 @@ namespace IncomeExpenseTrackerManager
             categoryForm1.Visible = false;
             incomeForm1.Visible = false;
             expenseForm1.Visible = true;
+
+            ExpenseForm eForm = expenseForm1 as ExpenseForm;
+            if (eForm != null)
+            {
+                eForm.refreshData();
+            }
         }
+
+        
     }
 }
